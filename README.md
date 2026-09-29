@@ -2,7 +2,7 @@
 
 A minimal, high-aesthetic e-commerce landing page crafted for the **AuraThinker™ Sculptural Smart Desk Lamp** — an adaptive LED luminaire designed for developers, designers, and creators.
 
-![AuraThinker Preview](assets/lamp.png)
+![AuraThinker Preview](https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681308/lamp_rohpz1.png)
 
 ## ✨ Features
 

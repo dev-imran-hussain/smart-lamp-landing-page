@@ -1,9 +1,9 @@
 /**
  * AuraThinker™ Luxury Landing Page Interactive Controls
- * Fully Integrated with 3 Real Figurine Variants:
- * - Focus Mode (6500K Cool White) -> assets/lamp-cool.png
- * - Reading Mode (4000K Neutral Warm) -> assets/lamp.png
- * - Sleep Mode (2700K Candle Warm) -> assets/lamp-amber.png
+ * Fully Integrated with 3 External CDN Cloudinary Figurine Variants:
+ * - Focus Mode (6500K Cool White) -> https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681303/lamp-cool_p1mjve.png
+ * - Reading Mode (4000K Neutral Warm) -> https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681308/lamp_rohpz1.png
+ * - Sleep Mode (2700K Candle Warm) -> https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681302/lamp-amber_fdxaqr.png
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     focus: {
       name: 'Focus Mode Active',
       kelvin: '6500 Kelvin',
-      image: 'assets/lamp-cool.png',
+      image: 'https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681303/lamp-cool_p1mjve.png',
       dotColor: 'bg-cyan-400',
       glowClass: 'mode-focus-glow',
       pillActiveBg: '#38bdf8',
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reading: {
       name: 'Reading Mode Active',
       kelvin: '4000 Kelvin',
-      image: 'assets/lamp.png',
+      image: 'https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681308/lamp_rohpz1.png',
       dotColor: 'bg-amber-300',
       glowClass: 'mode-reading-glow',
       pillActiveBg: '#dfbe7d',
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sleep: {
       name: 'Sleep Mode Active',
       kelvin: '2700 Kelvin',
-      image: 'assets/lamp-amber.png',
+      image: 'https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681302/lamp-amber_fdxaqr.png',
       dotColor: 'bg-orange-400',
       glowClass: 'mode-sleep-glow',
       pillActiveBg: '#fb923c',
