@@ -1,0 +1,6 @@
+# Robots.txt for AuraThinker™
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://aurathinker.com/sitemap.xml

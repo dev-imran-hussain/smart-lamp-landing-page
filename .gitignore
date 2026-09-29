@@ -1,0 +1,10 @@
+# Dependencies & Submodules
+skills/
+node_modules/
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

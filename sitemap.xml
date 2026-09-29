@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://aurathinker.com/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aurathinker.com/assets/https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681308/lamp_rohpz1.png</image:loc>
+      <image:title>AuraThinker Sculptural Smart Desk Lamp - Reading Mode 4000K</image:title>
+      <image:caption>AuraThinker sculptural smart lamp reading an illuminated book with warm ambient glow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aurathinker.com/assets/https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681302/lamp-amber_fdxaqr.pnghttps://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681303/lamp-cool_p1mjve.png</image:loc>
+      <image:title>AuraThinker Sculptural Smart Desk Lamp - Focus Mode 6500K Cool White</image:title>
+      <image:caption>Crisp cool white edge lighting for late-night coding and deep focus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aurathinker.com/assets/https://res.cloudinary.com/dfz1dlwnz/image/upload/v1790681302/lamp-amber_fdxaqr.png</image:loc>
+      <image:title>AuraThinker Sculptural Smart Desk Lamp - Sleep Mode 2700K Warm Amber</image:title>
+      <image:caption>Ultra-warm amber lighting filtering blue light for circadian rhythm relaxation</image:caption>
+    </image:image>
+  </url>
+</urlset>

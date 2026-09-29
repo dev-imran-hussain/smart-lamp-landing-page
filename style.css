@@ -1,0 +1,405 @@
+/* ==========================================================
+   AuraThinker™ — Luxury Dark UI Design System
+   Tailored for High-End Electronics & Sculptural Luminaire
+   ========================================================== */
+
+/* Design Tokens & CSS Variables */
+:root {
+  --bg-dark: #0B0B0C;
+  --bg-darker: #060607;
+  --bg-card: rgba(22, 23, 27, 0.55);
+  --bg-card-hover: rgba(28, 30, 36, 0.75);
+  
+  --pearl: #f3f3f5;
+  --pearl-muted: #9c9ca3;
+  --pearl-subtle: #6e6e77;
+
+  --gold-100: #faf3e0;
+  --gold-200: #f5e6c8;
+  --gold-300: #ecd5a5;
+  --gold-400: #dfbe7d;
+  --gold-500: #c9a456;
+  --gold-glow: rgba(223, 190, 125, 0.35);
+
+  --silver-border: rgba(255, 255, 255, 0.08);
+  --silver-border-hover: rgba(223, 190, 125, 0.35);
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Smart Mode Hue Dynamics */
+  --mode-glow-color: radial-gradient(circle, rgba(254, 215, 170, 0.45) 0%, rgba(223, 190, 125, 0.2) 40%, rgba(11, 11, 12, 0) 70%);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--pearl);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Background Ambient Glow & Noise Texture */
+.ambient-glow {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(223, 190, 125, 0.12) 0%, rgba(200, 160, 80, 0.03) 45%, rgba(11, 11, 12, 0) 70%);
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  transition: all 1s ease-in-out;
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ffffff 15%, #f5e6c8 50%, #dfbe7d 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-pearl {
+  color: var(--pearl);
+}
+
+.text-pearl-muted {
+  color: var(--pearl-muted);
+}
+
+.text-gold-200 { color: var(--gold-200); }
+.text-gold-300 { color: var(--gold-300); }
+.text-gold-400 { color: var(--gold-400); }
+.bg-dark { background-color: var(--bg-dark); }
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(18, 19, 23, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.glass-panel {
+  background: rgba(18, 19, 23, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--silver-border);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Glass Feature Cards (Section 4) */
+.glass-feature-card {
+  background: rgba(18, 19, 23, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--silver-border);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.6);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.glass-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--silver-border-hover);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 25px rgba(223, 190, 125, 0.15);
+  background: rgba(24, 25, 31, 0.65);
+}
+
+/* Buttons & CTAs */
+.btn-gold-outline {
+  color: var(--gold-200);
+  background: rgba(223, 190, 125, 0.04);
+  border: 1px solid rgba(223, 190, 125, 0.4);
+  box-shadow: 0 0 15px rgba(223, 190, 125, 0.15);
+  cursor: pointer;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(223, 190, 125, 0.12);
+  border-color: var(--gold-300);
+  box-shadow: 0 0 25px rgba(223, 190, 125, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-gold-solid {
+  background: linear-gradient(135deg, #dfbe7d 0%, #c59f53 100%);
+  color: #0c0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-solid:hover {
+  background: linear-gradient(135deg, #ecd5a5 0%, #d4ad5d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 45px rgba(223, 190, 125, 0.55);
+}
+
+.btn-gold-solid:active {
+  transform: translateY(0);
+}
+
+/* Mode Switcher Pills on Hero */
+.mode-pill {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  color: var(--pearl-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mode-pill:hover {
+  color: var(--pearl);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mode-pill.active {
+  color: #0c0c0e;
+  background: var(--gold-300);
+  border-color: var(--gold-300);
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(223, 190, 125, 0.4);
+}
+
+/* 2. Hero Section: Sun-like Aura Glow behind lamp */
+.hero-sphere-glow {
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 245, 215, 0.75) 0%, rgba(254, 215, 140, 0.5) 30%, rgba(223, 190, 125, 0.25) 55%, rgba(11, 11, 12, 0) 75%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-ambient-pulse {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 190, 125, 0.15) 0%, rgba(11, 11, 12, 0) 70%);
+  filter: blur(70px);
+  pointer-events: none;
+  animation: pulseAura 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseAura {
+  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+}
+
+.hero-lamp-img,
+#showcase-lamp-img {
+  max-height: 480px;
+  width: auto;
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.95));
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lamp-img-fade-out {
+  opacity: 0.2 !important;
+  transform: scale(0.96) !important;
+  filter: blur(5px) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.9)) !important;
+}
+
+.mode-thumb-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.active-mode .mode-thumb-box {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  .hero-sphere-glow {
+    width: 220px;
+    height: 220px;
+    top: 20%;
+  }
+  .hero-lamp-img {
+    max-height: 340px;
+  }
+}
+
+/* 3. The Design Story Vignette */
+.bg-radial-vignette {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(11, 11, 12, 0.9) 80%);
+}
+
+/* 5. Smart Modes Interactive Showcase */
+.mode-card {
+  background: rgba(18, 19, 23, 0.35);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.mode-card:hover {
+  background: rgba(22, 23, 29, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.mode-card.active-mode {
+  background: rgba(24, 26, 33, 0.85);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8);
+}
+
+.mode-card[data-mode="focus"].active-mode {
+  border-color: rgba(103, 232, 249, 0.5);
+  box-shadow: 0 0 25px rgba(103, 232, 249, 0.15);
+}
+
+.mode-card[data-mode="reading"].active-mode {
+  border-color: rgba(253, 230, 138, 0.5);
+  box-shadow: 0 0 25px rgba(253, 230, 138, 0.15);
+}
+
+.mode-card[data-mode="sleep"].active-mode {
+  border-color: rgba(251, 146, 60, 0.5);
+  box-shadow: 0 0 25px rgba(251, 146, 60, 0.15);
+}
+
+/* Showcase Stage Lighting Dynamics */
+.showcase-stage {
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(11, 11, 12, 0.95) 75%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.showcase-bulb-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.mode-focus-glow {
+  background: radial-gradient(circle, rgba(230, 245, 255, 0.9) 0%, rgba(103, 232, 249, 0.55) 35%, rgba(56, 189, 248, 0.15) 60%, transparent 75%);
+}
+
+.mode-reading-glow {
+  background: radial-gradient(circle, rgba(255, 248, 225, 0.9) 0%, rgba(253, 230, 138, 0.6) 35%, rgba(223, 190, 125, 0.2) 60%, transparent 75%);
+}
+
+.mode-sleep-glow {
+  background: radial-gradient(circle, rgba(254, 215, 170, 0.75) 0%, rgba(251, 146, 60, 0.45) 35%, rgba(234, 88, 12, 0.15) 60%, transparent 75%);
+}
+
+/* 7. Final Call to Action */
+.final-cta-section {
+  background-color: #0B0B0C;
+}
+
+/* Cart Drawer Modal */
+#cart-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#cart-modal.open .cart-drawer {
+  transform: translateX(0);
+}
+
+/* Custom Scrollbar for Luxury Aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(223, 190, 125, 0.4);
+}
