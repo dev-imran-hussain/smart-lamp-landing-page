@@ -371,6 +371,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 6. Sticky Mobile Bottom CTA Bar Visibility on Scroll
+  const stickyMobileCta = document.getElementById('sticky-mobile-cta');
+  if (stickyMobileCta) {
+    const handleStickyMobileScroll = () => {
+      if (window.scrollY > 280) {
+        stickyMobileCta.classList.remove('translate-y-full', 'opacity-0');
+        stickyMobileCta.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        stickyMobileCta.classList.remove('translate-y-0', 'opacity-100');
+        stickyMobileCta.classList.add('translate-y-full', 'opacity-0');
+      }
+    };
+    window.addEventListener('scroll', handleStickyMobileScroll, { passive: true });
+    handleStickyMobileScroll();
+  }
+
   // Initial setup: Reading Mode as hero default
   applyMode('reading', false);
 });
